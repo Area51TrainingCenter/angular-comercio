@@ -27,6 +27,7 @@ import { IntroComponent } from './intro/intro.component';
 
 import { ExampleDef } from './example.model';
 import { UserComponent } from './user/user.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 
 // Master list
@@ -51,7 +52,8 @@ const routes: Routes = [
     IntroComponent,
     UserComponent,
     SidebarComponent,
-    SidebarItemComponent
+    SidebarItemComponent,
+    AnalyticsComponent
   ],
   imports: [
     BrowserModule,
