@@ -1,7 +1,7 @@
 <div class="four wide column center aligned votes">
   <div class="ui statistic">
     <div class="value">
-      {{ votes }}
+      {{ article.votes }}
     </div>
     <div class="label">
       Votos
@@ -9,8 +9,8 @@
   </div>
 </div>
 <div class="twelve wide column">
-  <a class="ui large header" href="{{ link }}">
-    {{ title }}
+  <a class="ui large header" href="{{ article.link }}">
+    {{ article.title }}
   </a>
   <ul class="ui big horizontal list voters">
     <li class="item">
@@ -19,7 +19,7 @@
           Voto a favor 
         </a>
     </li>
-    <li class="item"> 
+    <li class="item">
       <a href (click)="voteDown()">
         <i class="arrow down icon"></i>
         Voto en contra
