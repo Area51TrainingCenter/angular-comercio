@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class MyRedditPage {
+export class InventoryAppPage {
   navigateTo() {
     return browser.get('/');
   }

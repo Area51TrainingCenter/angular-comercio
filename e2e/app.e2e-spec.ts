@@ -1,10 +1,10 @@
-import { MyRedditPage } from './app.po';
+import { InventoryAppPage } from './app.po';
 
-describe('my-reddit App', () => {
-  let page: MyRedditPage;
+describe('inventory-app App', () => {
+  let page: InventoryAppPage;
 
   beforeEach(() => {
-    page = new MyRedditPage();
+    page = new InventoryAppPage();
   });
 
   it('should display welcome message', () => {
