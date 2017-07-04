@@ -1,6 +1,7 @@
 import {
   Component,
-  Input
+  Input,
+  HostBinding
 } from '@angular/core';
 import { Product } from '../product.model';
 
@@ -9,8 +10,8 @@ import { Product } from '../product.model';
   template: '<img class="product-image" [src]="product.imageUrl">',
 })
 export class ProductImageComponent {
-  @Input() prodcut: Product;
+  @Input() product: Product;
 
-  
+  @HostBinding('attr.class') cssClass = 'ui small image';
 
 }
