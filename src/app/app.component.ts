@@ -10,6 +10,7 @@ export class AppComponent {
   products: Product[];
 
   contructor() {
+    console.log('test')
     this.products = [
       new Product(
         'movie0001',
@@ -27,7 +28,7 @@ export class AppComponent {
       ),
       new Product(
         'movie0003',
-        'Spiderman Homeoming',
+        'Spiderman Homecoming',
         'http://t0.gstatic.com/images?q=tbn:ANd9GcT8W3Fe7DD101g0M7OCalJN9u675sQAJFslGCjvs74PTOfEKt_t',
         ['Superheroes'],
         10
