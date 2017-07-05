@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  EventEmitter
+} from '@angular/core';
 import { Product } from './product.model';
 
 
@@ -36,4 +39,7 @@ export class AppComponent {
     ]
   }
 
+  productWasSelected(product: Product) {
+    console.log('Producto seleccionado: ', product);
+  }
 }

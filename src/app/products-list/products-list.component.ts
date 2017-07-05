@@ -1,6 +1,8 @@
 import {
   Component,
-  Input
+  EventEmitter,
+  Input,
+  Output
 } from '@angular/core';
 
 import { Product } from '../product.model';
@@ -13,6 +15,26 @@ import { Product } from '../product.model';
 export class ProductsListComponent {
 
   @Input() productList: Product[];
+  @Output() onProductSelected: EventEmitter<Product>;
 
+  private currentProduct: Product;
+
+  constructor() {
+    this.onProductSelected = new EventEmitter();
+  }
+
+  clicked(product: Product) {
+    //console.log(product)
+    this.currentProduct = product;
+    this.onProductSelected.emit(product);
+  }
+
+  isSelected(product: Product) {
+    if (!product || !this.currentProduct) {
+      return false;
+    }
+    return product.sku === this.currentProduct.sku;
+    //return true;
+  }
 
 }
