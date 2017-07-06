@@ -1,5 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {
+  RouterModule,
+  Routes,
+  Router
+} from '@angular/router';
+import {
+  APP_BASE_HREF,
+  LocationStrategy,
+  HashLocationStrategy
+} from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -18,7 +28,19 @@ export const examples: ExampleDef[] = [
   { label: 'NgSwitch', name: 'NgSwitch', path: '', component: null },
   { label: 'NgStyle', name: 'NgStyle', path: '', component: null },
   { label: 'NgClass', name: 'NgClass', path: '', component: null },
-  { label: 'NgNonBindable', name: 'NgNonBindable', path: '', component: null },
+  { label: 'NgNonBindable', name: 'NgNonBindable', path: '', component: null }
+]
+
+
+//Routes
+
+const routes: Routes = [
+  { path: '', component: IntroComponent, pathMatch: 'full' },
+  { path: 'ng_for', component: null, pathMatch: 'full' },
+  { path: 'ng_switch', component: null, pathMatch: 'full' },
+  { path: 'ng_style', component: null, pathMatch: 'full' },
+  { path: 'ng_class', component: null, pathMatch: 'full' },
+  { path: 'ng_non_bindable', component: null, pathMatch: 'full' }
 ]
 
 
@@ -30,9 +52,12 @@ export const examples: ExampleDef[] = [
     IntroComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
+    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: LocationStrategy, useValue: HashLocationStrategy },
     { provide: 'ExampleDefs', useValue: examples }
   ],
   bootstrap: [AppComponent]

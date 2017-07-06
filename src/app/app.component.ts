@@ -2,8 +2,9 @@ import {
   Component,
   Inject
 } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { ExampleDef } from './example.model'
+import { ExampleDef } from './example.model';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ import { ExampleDef } from './example.model'
 })
 export class AppComponent {
 
-  constructor( @Inject('ExampleDefs') public examples: ExampleDef[]) { }
+  constructor(private router: Router,
+    @Inject('ExampleDefs') public examples: ExampleDef[]) {
 
+  }
 }
