@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  Input
+} from '@angular/core';
+
+import { ExampleDef } from '../example.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,5 +11,6 @@ import { Component } from '@angular/core';
 })
 
 export class SidebarComponent {
+  @Input('items') items: ExampleDef[];
   constructor() { }
 }

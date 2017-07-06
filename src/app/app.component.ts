@@ -13,5 +13,4 @@ export class AppComponent {
 
   constructor( @Inject('ExampleDefs') public examples: ExampleDef[]) { }
 
-
 }

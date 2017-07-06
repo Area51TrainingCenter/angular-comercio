@@ -13,8 +13,14 @@ import { ExampleDef } from './example.model';
 // Master list
 
 export const examples: ExampleDef[] = [
-  { label: 'Intro', name: 'Root', path: '', component: IntroComponent }
+  { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
+  { label: 'NgFor', name: 'NgFor', path: '', component: null },
+  { label: 'NgSwitch', name: 'NgSwitch', path: '', component: null },
+  { label: 'NgStyle', name: 'NgStyle', path: '', component: null },
+  { label: 'NgClass', name: 'NgClass', path: '', component: null },
+  { label: 'NgNonBindable', name: 'NgNonBindable', path: '', component: null },
 ]
+
 
 @NgModule({
   declarations: [
@@ -26,7 +32,9 @@ export const examples: ExampleDef[] = [
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'ExampleDefs', useValue: examples }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
