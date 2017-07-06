@@ -24,17 +24,16 @@ export class ProductsListComponent {
   }
 
   clicked(product: Product) {
-    //console.log(product)
     this.currentProduct = product;
     this.onProductSelected.emit(product);
+
   }
 
-  isSelected(product: Product) {
+  isSelected(product: Product): boolean {
     if (!product || !this.currentProduct) {
       return false;
     }
     return product.sku === this.currentProduct.sku;
-    //return true;
   }
 
 }
