@@ -5,6 +5,12 @@ import {
 
 import { ExampleDef } from '../example.model'
 
+import { Location } from '@angular/common';
+import {
+  Router,
+  ActivatedRoute
+} from '@angular/router';
+
 @Component({
   selector: 'app-sidebar-item',
   templateUrl: './sidebar-item.component.html'
@@ -12,5 +18,10 @@ import { ExampleDef } from '../example.model'
 
 export class SidebarItemComponent {
   @Input('item') item: ExampleDef;
-  constructor() { }
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private location: Location
+  ) { }
 }

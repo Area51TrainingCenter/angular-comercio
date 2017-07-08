@@ -3,7 +3,6 @@ import {
   Inject
 } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { ExampleDef } from './example.model';
 
 @Component({
@@ -12,7 +11,8 @@ import { ExampleDef } from './example.model';
 })
 export class AppComponent {
 
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     @Inject('ExampleDefs') public examples: ExampleDef[]) {
 
   }
