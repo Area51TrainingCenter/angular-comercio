@@ -1,3 +1,52 @@
-<p>
-  ng-for-example works!
-</p>
+<h4 class="ui horizontal divider header">
+  Lista de texto
+</h4>
+<div class="ui list" *ngFor="let city of cities">
+  <div class="item"> {{ city }} </div>
+</div>
+
+<h4 class="ui horizontal divider header">
+  Lista de objetos
+</h4>
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Ciudad</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let person of people">
+    <td>{{ person.name }}</td>
+    <td>{{ person.age }}</td>
+    <td>{{ person.city }}</td>
+  </tr>
+</table>
+
+<h4 class="ui horizontal divider header">
+  Datos anidados
+</h4>
+<div *ngFor="let item of peopleByCity">
+  <h2 class="ui celled table">{{ item.city }}</h2>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let person of item.people">
+      <td>{{ person.name }}</td>
+      <td>{{ person.age }}</td>
+    </tr>
+  </table>
+</div>
+
+
+<h4 class="ui horizontal divider header">
+  Lista con índice
+</h4>
+
+<div class="ui list" *ngFor="let city of cities; let num = index">
+  <div class="item">{{ num+1 }} - {{ city }}</div>
+</div>

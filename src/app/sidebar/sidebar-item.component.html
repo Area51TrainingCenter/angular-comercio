@@ -1,3 +1,4 @@
 <a class="item"
+[ngClass]="{ active: isActive() }"
 [routerLink]="[item.path]"
 >{{ item.label }}</a>

@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-ng-non-bindable-example',
-  templateUrl: './ng-non-bindable-example.component.html',
-  styleUrls: ['./ng-non-bindable-example.component.css']
+  templateUrl: './ng-non-bindable-example.component.html'
 })
-export class NgNonBindableExampleComponent implements OnInit {
+export class NgNonBindableExampleComponent {
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

@@ -24,4 +24,8 @@ export class SidebarItemComponent {
     private route: ActivatedRoute,
     private location: Location
   ) { }
+
+  isActive(): boolean {
+    return `/${this.item.path}` === this.location.path();
+  }
 }

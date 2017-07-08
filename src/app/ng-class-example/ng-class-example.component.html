@@ -1,3 +1,11 @@
-<p>
-  ng-class-example works!
-</p>
+<div class="ngClassDemo">
+  <div [ngClass]="{ bordered: false }"> Siempre sin bordes</div>
+  <div [ngClass]="{ bordered: true }"> Siempre con bordes</div>
+
+  <div [ngClass]="{ bordered: isBordered }">
+    El borde esta {{ classesObj.bordered ? 'Activo' : 'Inactivo' }}
+  </div>
+
+  <button (click)="toggleBorder()">Cambiar borde</button>
+
+</div>
