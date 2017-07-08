@@ -13,6 +13,8 @@ export class NgClassExampleComponent implements OnInit {
 
   ngOnInit() {
     this.isBordered = false;
+    this.classList = ['blue', 'round'];
+
     this.toggleBorder();
   }
 
@@ -21,6 +23,15 @@ export class NgClassExampleComponent implements OnInit {
     this.classesObj = {
       bordered: this.isBordered
     };
+  }
+
+  toggleClass(cssClass: string): void {
+    const pos: number = this.classList.indexOf(cssClass);
+    if (pos > -1) {
+      this.classList.splice(pos, 1);
+    } else {
+      this.classList.push(cssClass);
+    }
   }
 
 }
