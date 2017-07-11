@@ -1,3 +1,20 @@
-<p>
-  ng-switch-example works!
-</p>
+<h4 class="ui horizontal divider header">
+  Selección actual: {{ choice }}
+</h4>
+
+<div class="ui raised segment">
+  <ul [ngSwitch]="choice">
+    <li *ngSwitchCase="1">Diablo</li>
+    <li *ngSwitchCase="2">Mario Bros</li>
+    <li *ngSwitchCase="2">Contra</li>
+    <li *ngSwitchCase="2">Doom</li>
+    <li *ngSwitchCase="3">Crash</li>
+    <li *ngSwitchDefault>Default Pacman</li>
+  </ul>
+</div>
+
+<div style="margin-top: 20px">
+  <button class="ui primary button" (click)="nextChoice()">
+    Siguiente...
+  </button>
+</div>
