@@ -2,6 +2,13 @@
   Selección actual: {{ choice }}
 </h4>
 
+<div *ngIf="true">
+  *ngIf
+</div>
+<div *ngIf="!false">
+  *otro
+</div>
+
 <div class="ui raised segment">
   <ul [ngSwitch]="choice">
     <li *ngSwitchCase="1">Diablo</li>
