@@ -1,0 +1,14 @@
+<div class="ui raised segment">
+  <h2 class="ui header"> SKU's </h2>
+  <form class="ui form" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <div class="field">
+      <label for="skuInput">SKU</label>
+      <input type="text" id="skuInput" placeholder="SKU" name="sku" ngModel>
+    </div>
+    <div class="field">
+      <label for="dateInput">Fecha</label>
+      <input type="text" id="dateInput" placeholder="Fecha" name="date" ngModel>
+    </div>
+    <button type="submit" class="ui button">Enviar</button>
+  </form>
+</div>
