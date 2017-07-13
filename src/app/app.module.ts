@@ -32,6 +32,7 @@ import { NgClassExampleComponent } from './ng-class-example/ng-class-example.com
 import { NgNonBindableExampleComponent } from './ng-non-bindable-example/ng-non-bindable-example.component';
 import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
 import { DemoFormSkuWithBuilderComponent } from './demo-form-sku-with-builder/demo-form-sku-with-builder.component';
+import { FormWithValidationsExplicitComponent } from './form-with-validations-explicit/form-with-validations-explicit.component';
 
 
 // Master list
@@ -44,7 +45,8 @@ export const examples: ExampleDef[] = [
   { label: 'NgClass', name: 'NgClass', path: 'ng_class', component: null },
   { label: 'NgNonBindable', name: 'NgNonBindable', path: 'ng_non_bindable', component: null },
   { label: 'FormSku', name: 'FormSku', path: 'form_sku', component: DemoFormSkuComponent },
-  { label: 'FormSkuBuilder', name: 'FormSkuBuilder', path: 'form_sku_builder', component: DemoFormSkuWithBuilderComponent }
+  { label: 'FormSkuBuilder', name: 'FormSkuBuilder', path: 'form_sku_builder', component: DemoFormSkuWithBuilderComponent },
+  { label: 'Validation Explicit', name: 'FormWithValidationsExplicit', path: 'validations-explicit', component: FormWithValidationsExplicitComponent }
 ]
 
 
@@ -57,7 +59,8 @@ const routes: Routes = [
   { path: 'ng_style', component: NgStyleExampleComponent, pathMatch: 'full' },
   { path: 'ng_class', component: NgClassExampleComponent, pathMatch: 'full' },
   { path: 'ng_non_bindable', component: NgNonBindableExampleComponent, pathMatch: 'full' },
-  { path: 'form_sku_builder', component: DemoFormSkuWithBuilderComponent, pathMatch: 'full' }
+  { path: 'form_sku_builder', component: DemoFormSkuWithBuilderComponent, pathMatch: 'full' },
+  { path: 'validations-explicit', component: FormWithValidationsExplicitComponent, pathMatch: 'full' }
 ]
 
 
@@ -73,7 +76,8 @@ const routes: Routes = [
     NgClassExampleComponent,
     NgNonBindableExampleComponent,
     DemoFormSkuComponent,
-    DemoFormSkuWithBuilderComponent
+    DemoFormSkuWithBuilderComponent,
+    FormWithValidationsExplicitComponent
   ],
   imports: [
     BrowserModule,
