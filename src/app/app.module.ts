@@ -12,6 +12,7 @@ import {
   HashLocationStrategy
 } from '@angular/common';
 
+import { UserModule } from './user/user.module';
 
 import {
   FormsModule,
@@ -25,28 +26,14 @@ import { IntroComponent } from './intro/intro.component';
 
 
 import { ExampleDef } from './example.model';
-import { NgForExampleComponent } from './ng-for-example/ng-for-example.component';
-import { NgSwitchExampleComponent } from './ng-switch-example/ng-switch-example.component';
-import { NgStyleExampleComponent } from './ng-style-example/ng-style-example.component';
-import { NgClassExampleComponent } from './ng-class-example/ng-class-example.component';
-import { NgNonBindableExampleComponent } from './ng-non-bindable-example/ng-non-bindable-example.component';
-import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
-import { DemoFormSkuWithBuilderComponent } from './demo-form-sku-with-builder/demo-form-sku-with-builder.component';
-import { FormWithValidationsExplicitComponent } from './form-with-validations-explicit/form-with-validations-explicit.component';
+import { UserComponent } from './user/user.component';
 
 
 // Master list
 
 export const examples: ExampleDef[] = [
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
-  { label: 'NgFor', name: 'NgFor', path: 'ng_for', component: NgForExampleComponent },
-  { label: 'NgSwitch', name: 'NgSwitch', path: 'ng_switch', component: null },
-  { label: 'NgStyle', name: 'NgStyle', path: 'ng_style', component: null },
-  { label: 'NgClass', name: 'NgClass', path: 'ng_class', component: null },
-  { label: 'NgNonBindable', name: 'NgNonBindable', path: 'ng_non_bindable', component: null },
-  { label: 'FormSku', name: 'FormSku', path: 'form_sku', component: DemoFormSkuComponent },
-  { label: 'FormSkuBuilder', name: 'FormSkuBuilder', path: 'form_sku_builder', component: DemoFormSkuWithBuilderComponent },
-  { label: 'Validation Explicit', name: 'FormWithValidationsExplicit', path: 'validations-explicit', component: FormWithValidationsExplicitComponent }
+  { label: 'Injector', name: 'inyector', path: 'injector', component: UserComponent }
 ]
 
 
@@ -54,36 +41,24 @@ export const examples: ExampleDef[] = [
 
 const routes: Routes = [
   { path: '', component: IntroComponent, pathMatch: 'full' },
-  { path: 'ng_for', component: NgForExampleComponent, pathMatch: 'full' },
-  { path: 'ng_switch', component: NgSwitchExampleComponent, pathMatch: 'full' },
-  { path: 'ng_style', component: NgStyleExampleComponent, pathMatch: 'full' },
-  { path: 'ng_class', component: NgClassExampleComponent, pathMatch: 'full' },
-  { path: 'ng_non_bindable', component: NgNonBindableExampleComponent, pathMatch: 'full' },
-  { path: 'form_sku_builder', component: DemoFormSkuWithBuilderComponent, pathMatch: 'full' },
-  { path: 'validations-explicit', component: FormWithValidationsExplicitComponent, pathMatch: 'full' }
+  { path: 'injector', component: UserComponent, pathMatch: 'full' }
 ]
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent,
-    SidebarItemComponent,
     IntroComponent,
-    NgForExampleComponent,
-    NgSwitchExampleComponent,
-    NgStyleExampleComponent,
-    NgClassExampleComponent,
-    NgNonBindableExampleComponent,
-    DemoFormSkuComponent,
-    DemoFormSkuWithBuilderComponent,
-    FormWithValidationsExplicitComponent
+    UserComponent,
+    SidebarComponent,
+    SidebarItemComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
+    UserModule,
     RouterModule.forRoot(routes, { enableTracing: true })
   ],
   providers: [
