@@ -13,7 +13,7 @@
       <input type="text"
            id="skuInput"
           placeholder="SKU"
-          [formControl]="myForm.controls['sku']">
+          [formControl]="myForm.controls['sku']" >
 
       <!-- <div *ngIf="!sku.valid" class="ui error message">
         SKU es invalido
@@ -34,10 +34,21 @@
 
     </div>
 
+    <div class="field">
+      
+      <label for="skuInput">Producto</label>
+      <input type="text"
+           id="productNameInput"
+          placeholder="Producto"
+          [formControl]="myForm.get('productName')"
+          [(ngModel)]="productName">
+
+    </div>
+
 
   <div *ngIf="!myForm.valid"
       class="ui error message">Form is invalid</div>
 
-    <button type="submit" class="ui button">Enviar</button>
+    <button type="submit" [disabled]="!myForm.valid"  class="ui button">Enviar</button>
   </form>
 </div>
