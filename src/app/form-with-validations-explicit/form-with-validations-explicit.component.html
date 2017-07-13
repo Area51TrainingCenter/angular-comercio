@@ -27,10 +27,16 @@
         El SKU es requerido
       </div>
 
+      <div *ngIf="sku.hasError('invalidSku')"
+      class="ui error message">
+        El SKU debe comenzar con <i>123</i>
+      </div>
+
     </div>
 
 
-
+  <div *ngIf="!myForm.valid"
+      class="ui error message">Form is invalid</div>
 
     <button type="submit" class="ui button">Enviar</button>
   </form>

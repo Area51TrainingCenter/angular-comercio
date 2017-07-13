@@ -3,7 +3,8 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
-  AbstractControl
+  AbstractControl,
+  FormControl
 } from '@angular/forms';
 
 
@@ -18,17 +19,28 @@ export class FormWithValidationsExplicitComponent implements OnInit {
 
   constructor(fb: FormBuilder) {
     this.myForm = fb.group({
-      'sku': ['', Validators.required]
+      // 'sku': ['', Validators.required]
+      'sku': ['', Validators.compose(
+        [Validators.required, skuValidator]
+      )]
     })
 
     this.sku = this.myForm.controls['sku'];
   }
 
-  onsubmit(value: string): void {
+  onSubmit(value: string): void {
     console.log('El valor es: ', value)
   }
 
   ngOnInit() {
   }
 
+}
+
+//StringMap<string, boolean>
+
+function skuValidator(control: FormControl): { [s: string]: boolean } {
+  if (!control.value.match(/^123/)) {
+    return { invalidSku: true }
+  }
 }
