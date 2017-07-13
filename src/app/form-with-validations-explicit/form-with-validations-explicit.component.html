@@ -13,11 +13,12 @@
       <input type="text"
            id="skuInput"
           placeholder="SKU"
-          [formControl]="myForm.controls['sku']" >
+          [formControl]="myForm.controls['sku']">
 
       <!-- <div *ngIf="!sku.valid" class="ui error message">
         SKU es invalido
       </div> -->
+ 
 
       <div *ngIf="myForm.controls['sku'].valid" class="ui error message">
         SKU es invalido
@@ -36,13 +37,16 @@
 
     <div class="field">
       
-      <label for="skuInput">Producto</label>
+      <label for="productNameInput">Producto</label>
       <input type="text"
            id="productNameInput"
           placeholder="Producto"
           [formControl]="myForm.get('productName')"
           [(ngModel)]="productName">
-
+     {{ productName }} ||
+      {{ productName }} ||
+      {{ productName }} ||
+      {{ productName }} ||
     </div>
 
 
