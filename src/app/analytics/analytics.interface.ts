@@ -1,5 +1,5 @@
 export interface Metric {
-  eventname: string;
+  eventName: string;
   scope: string;
 }
 

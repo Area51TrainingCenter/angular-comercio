@@ -13,6 +13,8 @@ import {
 } from '@angular/common';
 
 import { UserModule } from './user/user.module';
+import { AnalyticsModule } from './analytics/analytics.module';
+
 
 import {
   FormsModule,
@@ -28,21 +30,23 @@ import { IntroComponent } from './intro/intro.component';
 import { ExampleDef } from './example.model';
 import { UserComponent } from './user/user.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { SimpleHttpComponent } from './simple-http/simple-http.component';
 
 
 // Master list
 
 export const examples: ExampleDef[] = [
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
-  { label: 'Injector', name: 'inyector', path: 'injector', component: UserComponent }
+  { label: 'Injector', name: 'inyector', path: 'injector', component: UserComponent },
+  { label: 'Factory', name: 'factory', path: 'factory', component: AnalyticsComponent }
 ]
 
 
 //Routes
-
 const routes: Routes = [
   { path: '', component: IntroComponent, pathMatch: 'full' },
-  { path: 'injector', component: UserComponent, pathMatch: 'full' }
+  { path: 'injector', component: UserComponent, pathMatch: 'full' },
+  { path: 'factory', component: AnalyticsComponent, pathMatch: 'full' }
 ]
 
 
@@ -53,7 +57,8 @@ const routes: Routes = [
     UserComponent,
     SidebarComponent,
     SidebarItemComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    SimpleHttpComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     UserModule,
+    AnalyticsModule,
     RouterModule.forRoot(routes, { enableTracing: true })
   ],
   providers: [
