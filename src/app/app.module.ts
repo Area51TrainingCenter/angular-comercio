@@ -31,6 +31,9 @@ import { ExampleDef } from './example.model';
 import { UserComponent } from './user/user.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { SimpleHttpComponent } from './simple-http/simple-http.component';
+import { YouTubeSearchComponent } from './you-tube-search/you-tube-search.component';
+import { SearchResultComponent } from './you-tube-search/search-result/search-result.component';
+import { SearchBoxComponent } from './you-tube-search/search-box/search-box.component';
 
 
 // Master list
@@ -38,7 +41,8 @@ import { SimpleHttpComponent } from './simple-http/simple-http.component';
 export const examples: ExampleDef[] = [
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
   { label: 'Injector', name: 'inyector', path: 'injector', component: UserComponent },
-  { label: 'Factory', name: 'factory', path: 'factory', component: AnalyticsComponent }
+  { label: 'Factory', name: 'factory', path: 'factory', component: AnalyticsComponent },
+  { label: 'HTTP', name: 'http', path: 'http', component: SimpleHttpComponent }
 ]
 
 
@@ -46,7 +50,8 @@ export const examples: ExampleDef[] = [
 const routes: Routes = [
   { path: '', component: IntroComponent, pathMatch: 'full' },
   { path: 'injector', component: UserComponent, pathMatch: 'full' },
-  { path: 'factory', component: AnalyticsComponent, pathMatch: 'full' }
+  { path: 'factory', component: AnalyticsComponent, pathMatch: 'full' },
+  { path: 'http', component: SimpleHttpComponent, pathMatch: 'full' }
 ]
 
 
@@ -58,7 +63,10 @@ const routes: Routes = [
     SidebarComponent,
     SidebarItemComponent,
     AnalyticsComponent,
-    SimpleHttpComponent
+    SimpleHttpComponent,
+    YouTubeSearchComponent,
+    SearchResultComponent,
+    SearchBoxComponent
   ],
   imports: [
     BrowserModule,

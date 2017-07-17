@@ -1,3 +1,9 @@
-<p>
-  simple-http works!
-</p>
+<h2>Petición básica</h2>
+<button type="button" (click)="makeRequest()">Hacer petición</button>
+<button type="button" (click)="makePost()">Hacer POST</button>
+<button type="button" (click)="makeDelete()">Hacer DELETE</button>
+<button type="button" (click)="makeHeaders()">Hacer HEADERS</button>
+
+<div *ngIf="loading"> Cargando... </div>
+
+<pre> {{ data | json }} </pre>
