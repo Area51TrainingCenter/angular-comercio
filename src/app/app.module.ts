@@ -49,7 +49,7 @@ export const examples: ExampleDef[] = [
 ]
 
 
-//Routes
+// Routes
 const routes: Routes = [
   { path: '', component: IntroComponent, pathMatch: 'full' },
   { path: 'injector', component: UserComponent, pathMatch: 'full' },

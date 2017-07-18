@@ -16,10 +16,12 @@ export class YouTubeSearchService {
     @Inject(YOUTUBE_API_KEY) private apiKey: string,
     @Inject(YOUTUBE_API_URL) private apiUrl: string,
   ) {
-
+    console.log('apiKey: ', apiKey)
+    console.log('apiUrl: ', apiUrl)
   }
 
   search(query: string): Observable<SearchResult[]> {
+
     const params: string = [
       `q=${query}`,
       `key=${this.apiKey}`,
@@ -30,7 +32,6 @@ export class YouTubeSearchService {
 
     const queryUrl = `${this.apiUrl}?${params}`;
 
-    console.log(queryUrl)
 
     return this.http.get(queryUrl)
       .map((response: Response) => {
