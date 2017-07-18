@@ -35,6 +35,8 @@ import { YouTubeSearchComponent } from './you-tube-search/you-tube-search.compon
 import { SearchResultComponent } from './you-tube-search/search-result/search-result.component';
 import { SearchBoxComponent } from './you-tube-search/search-box/search-box.component';
 
+import { youTubeSearchInjectables } from './you-tube-search/you-tube-search.injectables';
+
 
 // Master list
 
@@ -42,7 +44,8 @@ export const examples: ExampleDef[] = [
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
   { label: 'Injector', name: 'inyector', path: 'injector', component: UserComponent },
   { label: 'Factory', name: 'factory', path: 'factory', component: AnalyticsComponent },
-  { label: 'HTTP', name: 'http', path: 'http', component: SimpleHttpComponent }
+  { label: 'HTTP', name: 'http', path: 'http', component: SimpleHttpComponent },
+  { label: 'YouTube', name: 'youtube', path: 'youtube', component: YouTubeSearchComponent }
 ]
 
 
@@ -51,7 +54,8 @@ const routes: Routes = [
   { path: '', component: IntroComponent, pathMatch: 'full' },
   { path: 'injector', component: UserComponent, pathMatch: 'full' },
   { path: 'factory', component: AnalyticsComponent, pathMatch: 'full' },
-  { path: 'http', component: SimpleHttpComponent, pathMatch: 'full' }
+  { path: 'http', component: SimpleHttpComponent, pathMatch: 'full' },
+  { path: 'youtube', component: YouTubeSearchComponent, pathMatch: 'full' }
 ]
 
 
@@ -78,6 +82,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { enableTracing: true })
   ],
   providers: [
+    youTubeSearchInjectables,
     { provide: APP_BASE_HREF, useValue: '/' },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: 'ExampleDefs', useValue: examples }
