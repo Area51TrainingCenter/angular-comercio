@@ -21,6 +21,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 
 import { AUTH_PROVIDERS } from './auth.service';
+import { ProtectedComponent } from './protected/protected.component';
+import { LoggedInGuard } from './logged-in.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -29,6 +31,11 @@ const routes: Routes = [
   { path: 'contacto', component: ContactComponent },
   { path: 'contactanos', redirectTo: 'contacto' },
   { path: 'login', component: LoginComponent },
+  {
+    path: 'protected',
+    component: ProtectedComponent,
+    canActivate: [LoggedInGuard]
+  },
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -39,17 +46,19 @@ const routes: Routes = [
     AboutComponent,
     ContactComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    ProtectedComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
-      routes,
-      { enableTracing: true }
+      routes
+      //  { enableTracing: true }
     )
   ],
   providers: [
     AUTH_PROVIDERS,
+    LoggedInGuard,
     { provide: LocationStrategy, useClass: PathLocationStrategy }
   ],
   bootstrap: [AppComponent]
