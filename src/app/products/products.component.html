@@ -1,0 +1,12 @@
+<h2>Productos</h2>
+
+<div class="navLinks">
+  <a [routerLink]="['./main']">Main</a> |
+  <a [routerLink]="['./more-info']">More Info</a> |
+  Escribe el id: <input #id size="6">
+  <button (click)="goToProduct(id.value)">Ver producto</button>
+</div>
+
+<div class="products-area">
+  <router-outlet></router-outlet>
+</div>
