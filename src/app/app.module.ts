@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { appStoreProviders } from './app.store';
-
 
 @NgModule({
   declarations: [
@@ -13,7 +11,7 @@ import { appStoreProviders } from './app.store';
   imports: [
     BrowserModule
   ],
-  providers: [appStoreProviders],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
