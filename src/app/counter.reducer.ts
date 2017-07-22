@@ -17,10 +17,10 @@ export const counterReducer: Reducer<AppState> =
     switch (action.type) {
       case INCREMENT:
         return Object.assign({}, state, { counter: state.counter + 1 });
-        break;
+
       case DECREMENT:
         return Object.assign({}, state, { counter: state.counter - 1 });
-        break;
+
 
       default:
         return state;
