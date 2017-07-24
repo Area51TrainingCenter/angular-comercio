@@ -1,11 +1,11 @@
 import { User } from '../user/user.model';
-// Importar el Thread
+import { Thread } from '../thread/thread.model';
 
 export interface Message {
   id?: string;
   sentAt: Date;
   isRead?: boolean;
-  thread?: boolean; // TODO: Set thread type
+  thread?: Thread;
   author: User;
   text: string;
 }
