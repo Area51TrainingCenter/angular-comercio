@@ -18,14 +18,16 @@ export class ChatThreadComponent implements OnInit {
   @Input() selected: boolean;
   @Output() onThreadSelected: EventEmitter<Thread>;
 
-  constructor() { }
+  constructor() {
+    this.onThreadSelected = new EventEmitter<Thread>();
+  }
 
   ngOnInit() {
   }
 
   clicked(event: any): void {
     this.onThreadSelected.emit(this.thread);
-    event.preventdefault();
+    event.preventDefault();
   }
 
 }

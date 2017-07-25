@@ -24,7 +24,6 @@ import { ChatPageComponent } from './chat-page/chat-page.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FormsModule,
     ChatMessageComponent,
     FromNowPipe,
     ChatThreadComponent,
@@ -34,7 +33,8 @@ import { ChatPageComponent } from './chat-page/chat-page.component';
     ChatPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [appStoreProviders],
   bootstrap: [AppComponent]

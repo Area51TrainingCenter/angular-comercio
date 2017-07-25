@@ -3,10 +3,11 @@ import {
   OnInit,
   Inject
 } from '@angular/core';
-
 import { AppStore } from '../app.store';
 import * as Redux from 'redux';
-import { Thread } from '../thread/thread.model';
+import {
+  Thread
+} from '../thread/thread.model';
 
 import * as ThreadActions from '../thread/thread.actions';
 
@@ -21,28 +22,23 @@ import {
   templateUrl: './chat-threads.component.html',
   styleUrls: ['./chat-threads.component.css']
 })
-export class ChatThreadsComponent implements OnInit {
+export class ChatThreadsComponent {
   threads: Thread[];
   currentThreadId: string;
 
-  constructor(
-    @Inject(AppStore) private store: Redux.Store<AppState>
-  ) {
-    store.subscribe(
-      () => this.updateState()
-    )
+  constructor( @Inject(AppStore) private store: Redux.Store<AppState>) {
+    store.subscribe(() => this.updateState());
     this.updateState();
   }
 
   updateState() {
     const state = this.store.getState();
 
+
     this.threads = getAllThreads(state);
 
-    this.currentThreadId = getCurrentThread(state).id;
-  }
 
-  ngOnInit() {
+    this.currentThreadId = getCurrentThread(state).id;
   }
 
   handleThreadClicked(thread: Thread) {
