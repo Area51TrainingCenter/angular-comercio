@@ -1,4 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Inject
+} from '@angular/core';
+
+import { AppStore } from '../app.store';
+import * as Redux from 'redux';
+import { Thread } from '../thread/thread.model';
+
+import
 
 @Component({
   selector: 'app-chat-threads',
