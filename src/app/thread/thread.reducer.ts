@@ -119,6 +119,16 @@ export const getUnreadMessagesCount = createSelector(
 
 
 // Obtener el thread actual
+export const getCurrentThread = createSelector(
+  getThreadsEntities,
+  getThreadsState,
+  (entities: ThreadsEntities, state: ThreadsState) =>
+    entities[state.currentThreadId]);
 
 // Obtener todos los mensajes
-
+export const getAllMessages = createSelector(
+  getAllThreads,
+  (threads: Thread[]) =>
+    threads.reduce(
+      (messages, thread) => [...messages, ...thread.messages],
+      []).sort((m1, m2) => m1.sentAt - m2.sentAt));
