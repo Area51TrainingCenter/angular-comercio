@@ -90,4 +90,35 @@ export const ThreadsReducer =
       default:
         return state;
     }
-  }
+  };
+
+export const getThreadsState = (state): ThreadsState => state.threads;
+
+export const getThreadsEntities = createSelector(
+  getThreadsState,
+  (state: ThreadsState) => state.entities);
+
+export const getAllThreads = createSelector(
+  getThreadsEntities,
+  (entities: ThreadsEntities) => Object.keys(entities)
+    .map((threadId) => entities[threadId]));
+
+// Contar mensajes sin leer
+export const getUnreadMessagesCount = createSelector(
+  getAllThreads,
+  (threads: Thread[]) => threads.reduce(
+    (unreadCount: number, thread: Thread) => {
+      thread.messages.forEach((message: Message) => {
+        if (!message.isRead) {
+          ++unreadCount;
+        }
+      });
+      return unreadCount;
+    },
+    0));
+
+
+// Obtener el thread actual
+
+// Obtener todos los mensajes
+
