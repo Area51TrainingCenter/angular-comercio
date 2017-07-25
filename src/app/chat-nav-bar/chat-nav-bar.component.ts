@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-nav-bar.component.css']
 })
 export class ChatNavBarComponent implements OnInit {
+  unreadMessagesCount: number;
 
-  constructor() { }
+  constructor( @Inject(AppStore) private store: Redux.Store<AppState>) {
+    store.subscribe(() => this.updateState());
+    this.updateState();
+  }
 
   ngOnInit() {
   }
