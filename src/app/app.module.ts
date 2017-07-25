@@ -12,10 +12,12 @@ import {
   AppStore,
   appStoreProviders
 } from './app.store';
+import { ChatMessageComponent } from './chat-message/chat-message.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatMessageComponent
   ],
   imports: [
     BrowserModule
