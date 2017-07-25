@@ -28,7 +28,7 @@ export const UserReducer =
 
 export const getUserState = (state): UsersState => state.users;
 
-export const getCurrentuser = createSelector(
+export const getCurrentUser = createSelector(
   getUserState,
   (state: UsersState) => state.currentUser);
 
