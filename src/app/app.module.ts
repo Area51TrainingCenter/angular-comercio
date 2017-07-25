@@ -14,12 +14,14 @@ import {
 } from './app.store';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
 import { FromNowPipe } from './pipes/from-now.pipe';
+import { ChatThreadComponent } from './chat-thread/chat-thread.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatMessageComponent,
-    FromNowPipe
+    FromNowPipe,
+    ChatThreadComponent
   ],
   imports: [
     BrowserModule
