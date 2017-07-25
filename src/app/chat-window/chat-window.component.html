@@ -2,7 +2,6 @@
   <div class="chat-window">
     <div class="panel-container">
       <div class="panel panel-default">
-
         <div class="panel-heading top-bar">
           <div class="panel-title-container">
             <h3 class="panel-title">
@@ -15,16 +14,13 @@
         </div>
 
         <div class="panel-body msg-container-base">
-          <chat-message *ngFor="let message of currentThread.messages" [message]="message">
-          </chat-message>
+          <app-chat-message *ngFor="let message of currentThread.messages" [message]="message">
+          </app-chat-message>
         </div>
 
         <div class="panel-footer">
           <div class="input-group">
-            <input type="text" class="chat-input" 
-            placeholder="Write your message here..."
-             (keydown.enter)="onEnter($event)"
-              [(ngModel)]="draftMessage.text"
+            <input type="text" class="chat-input" placeholder="Write your message here..." (keydown.enter)="onEnter($event)" [(ngModel)]="draftMessage.text"
             />
             <span class="input-group-btn">
               <button class="btn-chat"
