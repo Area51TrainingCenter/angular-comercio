@@ -13,11 +13,13 @@ import {
   appStoreProviders
 } from './app.store';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
+import { FromNowPipe } from './pipes/from-now.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatMessageComponent
+    ChatMessageComponent,
+    FromNowPipe
   ],
   imports: [
     BrowserModule
